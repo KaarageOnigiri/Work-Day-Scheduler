@@ -3,7 +3,8 @@
 // in the html.
 
 console.log($(".time-block"));
-console.log($("i").eq(0));
+console.log($(".time-block").attr("id"));
+console.log();
 $(function () {
   // TODO: Add a listener for click events on the save button. This code should
   // use the id in the containing time-block as a key to save the user input in
@@ -17,9 +18,21 @@ $(function () {
   //     console.log(x);
   //   })
   // }
+  
   $(".saveBtn").on("click", function(event) {
-    console.log($(this).siblings(".description").val());
-    
+    // console.log($(this).siblings(".description").val());
+    // // this works
+    // console.log($(this).parent("#hour-" + [9]));
+    console.log($(this).parent().attr("id"));
+
+    // for (i=9, x=0; i>=9 && i<=17; i++, x++) {
+    //   console.log("for loop");
+    //   if($(this) === $(".saveBtn").eq(0)) {
+    //     console.log("hour-" + [i]);
+    //   }
+    // }
+    // $(this).parent;
+    // localStorage.setItem($(this).siblings(".description").val())
   })
   
   dayjs()
@@ -42,3 +55,12 @@ $(function () {
 });
 
 // parse int (switching to number from string)
+
+// var x = "hour-14";
+// undefined
+// x.split("")
+// (7) ['h', 'o', 'u', 'r', '-', '1', '4']
+// x.split("-")
+// (2) ['hour', '14']
+// x.split("-")[1]
+// '14'
