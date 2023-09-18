@@ -68,5 +68,3 @@ $(function () {
     $("#currentDay").text(dayjs().format("ddd, MMM D YYYY h:mm:ss a"));
   }, 100);
 });
-
-// parse int (switching to number from string)
