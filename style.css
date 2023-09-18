@@ -57,3 +57,9 @@ textarea {
   font-size: 20px;
   transition: all 0.3s ease-in-out;
 }
+
+.customBox {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
