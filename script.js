@@ -22,21 +22,23 @@ $(function () {
   // testing
   console.log(dayjs().format("MMM D, YYYY | dddd | h:mm:ss a | HH:mm"));
   console.log(dayjs().format("HH")); 
+  console.log(dayjs().format("16"))
   // changed the string to number so they can be compared
   var currentMilitaryHour = parseInt(dayjs().format("HH")) ;
 
   for (x=0, i=9; i>=9 && i<=17; x++, i++) {
-    var hour = $("#hour-"+[i]).attr("id").split("-")[1];
+    var hour = parseInt($("#hour-"+[i]).attr("id").split("-")[1]);
+    
     if (hour < currentMilitaryHour) {
-      console.log("<");
+      console.log(i, "<", currentMilitaryHour);
       $("#hour-"+[i]).children("textarea").addClass("past");
     }
     if (hour > currentMilitaryHour) {
-      console.log(12, ">", currentMilitaryHour);
+      console.log(i, ">", currentMilitaryHour);
       $("#hour-"+[i]).children("textarea").addClass("future");
     }
     if (hour === currentMilitaryHour) {
-      console.log("=");
+      console.log(i, "=", currentMilitaryHour);
       $("#hour-"+[i]).children("textarea").addClass("present");
     }
   }
